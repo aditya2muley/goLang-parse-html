@@ -19,10 +19,9 @@ func ParseHtml(data io.Reader) ([]linkData, error) {
 	for _, node := range nodes {
 		links = append(links, buildLinks(node))
 	}
-	fmt.Println(links)
 
 	// dfs(containt, "")
-	return nil, nil
+	return links, nil
 
 }
 
@@ -40,7 +39,6 @@ func buildLinks(node *html.Node) linkData {
 
 func text(node *html.Node) string {
 	if node.Type == html.TextNode {
-		fmt.Println(node.Data)
 		return node.Data
 	}
 
@@ -75,6 +73,13 @@ func dfs(node *html.Node, padding string) {
 	fmt.Println(padding, found)
 	for row := node.FirstChild; row != nil; row = row.NextSibling {
 		dfs(row, padding+"  ")
+	}
+}
+
+func Display(links []linkData) {
+	for _, data := range links {
+		fmt.Println(data.Href)
+		fmt.Println(data.Text)
 	}
 }
 
