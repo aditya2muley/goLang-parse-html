@@ -12,7 +12,8 @@ func main() {
 <html>
 <body>
 <h1>Hello!</h1>
-<a href="/other-page">A link to another page</a>
+<a href="/other-page">A link to another page<span>span text</span></a>
+<a href="/other-page2">A link to another page2</a>
 </body>
 </html>
 `
