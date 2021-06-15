@@ -12,7 +12,7 @@ import (
 var fileName *string
 
 func init() {
-	fileName = flag.String("fname", "ex1.txt", "Yml File containing URL and Paths")
+	fileName = flag.String("fname", "ex1.txt", "HTML File containing html tags")
 	flag.Parse()
 }
 
